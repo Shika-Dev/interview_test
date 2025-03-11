@@ -21,7 +21,7 @@ class _BerandaPageState extends State<BerandaPage> {
 
   Future<void> getKeluhan() async {
     try {
-      final response = await http.get(Uri.parse('http://localhost:3000/keluhan'));
+      final response = await http.get(Uri.parse('http://localhost:3000/keluhan?is_verified = 1'));
       if (response.statusCode == 200) {
         setState(() {
           keluhan = json.decode(response.body);
